@@ -5,23 +5,35 @@
  * Date: 11.09.15
  */
 
-use \Framework\Exception\ClassNotFoundException;
+use Framework\Exception\ClassNotFoundException;
 
 class Loader {
 
+    /**
+     * @var object  Stored instance
+     */
     protected static $_instance;
 
+    /**
+     * Map array
+     */
     protected $namespacesMap = array();
 
-    private function __construct(){}
+    /**
+     * Constructor
+     */
+    private function __construct()
+    {
+    }
 
     /**
-     * Close access to a function outside the class.
-     *
+     * Cloning method
      */
     private function __clone(){}
 
-
+    /**
+     * @return object|Loader
+     */
     public static function getInstance()
     {
         if(null === self::$_instance) {
