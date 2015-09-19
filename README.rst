@@ -2,7 +2,7 @@ A simple Web Framework
 =============================
 
 Silex is a PHP micro-framework to develop websites based on `Symfony
-components`_:
+
 
 .. code-block:: php
 
