@@ -1,7 +1,7 @@
 A simple Web Framework
 =============================
 
-This is a PHP micro-framework to develop websites.
+This is a PHP micro-framework to develop websites.</br>
 Framework works with PHP 5.4 or later. _:
 
 .. code-block:: php
