@@ -1,7 +1,8 @@
 A simple Web Framework
 =============================
 
-This is a PHP micro-framework to develop websites. _:
+This is a PHP micro-framework to develop websites.
+components`_:
 
 .. code-block:: php
 
