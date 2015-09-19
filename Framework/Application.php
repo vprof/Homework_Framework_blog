@@ -25,7 +25,13 @@ class Application {
          */
         $request = new Request;
         $response = new Response;
-
+        
+        /**
+         * Found router 
+         */
+        $routes = $this->config['routes'];
+		$router = new Router($request, $routes);
+		$router->run();
 
     }
 
