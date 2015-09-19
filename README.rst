@@ -1,7 +1,7 @@
 A simple Web Framework
 =============================
 
-This is a PHP micro-framework to develop websites.
+Silex is a PHP micro-framework to develop websites based on `Symfony
 components`_:
 
 .. code-block:: php
