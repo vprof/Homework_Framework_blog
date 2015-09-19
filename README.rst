@@ -1,8 +1,8 @@
 A simple Web Framework
 =============================
 
-This is a PHP micro-framework to develop websites.</br>
-Framework works with PHP 5.4 or later. _:
+This is a PHP micro-framework to develop websites.
+ _:
 
 .. code-block:: php
 
@@ -18,5 +18,4 @@ Framework works with PHP 5.4 or later. _:
     $application = new \Framework\Application(__DIR__.'/../app/config/config.php');
     $application->run();
 
-
-
+Framework works with PHP 5.4 or later.
