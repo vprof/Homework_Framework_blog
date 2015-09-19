@@ -15,3 +15,24 @@ $loader->register();
 $application = new \Framework\Application(__DIR__.'/../app/config/config.php');
 $application->run();
 
+Silex, a simple Web Framework
+=============================
+
+Silex is a PHP micro-framework to develop websites based on `Symfony
+components`_:
+
+.. code-block:: php
+
+    <?php
+
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+
+    $app->get('/hello/{name}', function ($name) use ($app) {
+      return 'Hello '.$app->escape($name);
+    });
+
+    $app->run();
+
+Silex works with PHP 5.5.9 or later.
