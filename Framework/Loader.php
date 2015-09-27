@@ -6,7 +6,7 @@ use Framework\Exception\ClassNotFoundException;
  * This is a class loader.
  *
  * @package Application
- * @autor Jura Zubach
+ * @author Jura Zubach
  * @since 1.0
  */
 class Loader {
