@@ -12,7 +12,7 @@ use Framework\Exception\ClassNotFoundException;
 class Loader {
 
 
-    private static $instance;
+    private static $_instance;
 
     private $namespaces = array();
 
@@ -28,11 +28,11 @@ class Loader {
 
     public static function getInstance()
     {
-        if(empty(self::$instance))
+        if(empty(self::$_instance))
         {
-            self::$instance = new self();
+            self::$_instance = new self();
         }
-        return self::$instance;
+        return self::$_instance;
     }
 
     /**
@@ -49,14 +49,6 @@ class Loader {
     public function unregister()
     {
         spl_autoload_unregister(array($this, 'loadClass'));
-    }
-
-    /**
-     * @param $instance
-     */
-    public static function setInstance($instance)
-    {
-        self::$instance = $instance;
     }
 
     /**
