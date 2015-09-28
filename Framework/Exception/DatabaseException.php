@@ -1,12 +1,15 @@
 <?php
-/**
- * Description:
- * User: JuraZubach
- * Date: 11.09.15
- */
 
 namespace Framework\Exception;
 
-class DatabaseException {
-
+/**
+ * Database exception.
+ *
+ * @package Exception
+ * @author Jura Zubach
+ * @since 1.0
+ */
+class DatabaseException extends FrameworkException
+{
+      //...
 }
