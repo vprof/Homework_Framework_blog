@@ -1,39 +1,46 @@
 <?php
-/**
- * Description:
- * User: JuraZubach
- * Date: 11.09.15
- */
 
 namespace Framework\DI;
 
+/**
+ * This is a Service class Application.
+ *
+ * @package DI
+ * @author Jura Zubach
+ * @since 1.0
+ */
 class Service 
 {
     private static $instance = null;
-    private $values = array();
+    private static $services = array();
 
     private function __construct()
     {
-
+        //...
     }
 
-    static function instanse()
+    public static function instanse()
     {
         if(is_null(self::$instance)){
             self::$instance = new self();
         }
     }
 
-    function get($key)
+    /**
+     * @param $service_name
+     * @param $object
+     */
+    public static function set($service_name,$object)
     {
-        if(isset($this->values[$key])){
-            return $this->values[$key];
-        }
-        return null;
+        self::$services[$service_name] = $object;
     }
 
-    function set ($key, $value)
+    /**
+     * @param $service_name
+     * @return bool
+     */
+    public static function get($service_name)
     {
-        $this->values[$key] = $value;
+        return empty(self::$services[$service_name] ? null : self::$instance);
     }
 }
