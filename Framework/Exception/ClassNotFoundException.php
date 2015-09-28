@@ -11,5 +11,5 @@ namespace Framework\Exception;
  */
 class ClassNotFoundException extends FrameworkException
 {
-
+      //...
 }
