@@ -3,7 +3,7 @@
 namespace Framework\Exception;
 
 /**
- * Database exception.
+ * Database not found exception.
  *
  * @package Exception
  * @author Jura Zubach
@@ -11,5 +11,8 @@ namespace Framework\Exception;
  */
 class DatabaseException extends FrameworkException
 {
-      //...
+    public function __construct()
+    {
+        echo "Ошибка Database";
+    }
 }
