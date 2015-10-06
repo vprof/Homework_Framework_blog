@@ -41,12 +41,16 @@ class Application {
         
         if (class_exists($route['controller'])) {
             $controller_reflection = new \ReflectionClass($route['controller']);
-            if ($controller_reflection->getMethod($route['action'].'Action')) {
-                $controller = $controller_reflection->newInstance();
-
-            } else {
-                new FrameworkException();
-            }
+            if ($controller_reflection->hasMethod($action))
+            {
+                $method = new \ReflectionMethod($controller, $action);
+                $params = $method->getParameters();
+                if(empty($params))
+                {
+                    $method->invoke(new $controller);
+                } else { new RouteException();
+                }
+            } else { new FrameworkException(); }
         }
 
         //определили контролер
