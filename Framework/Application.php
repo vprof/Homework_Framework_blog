@@ -38,7 +38,7 @@ class Application {
         $match_route = new Router($map);
         $route = $match_route->findRoute();
         $controller = new $route['controller'];
-        $action = new $route['action'].'Action';
+        $action = $route['action'].'Action';
         $vars = null;
         
         
