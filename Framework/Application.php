@@ -38,6 +38,9 @@ class Application {
         $match_route = new Router($map);
         $route = $match_route->findRoute();
         $controller = new $route['controller'];
+        $action = new $route['action'].'Action';
+        $vars = null;
+        
         
         if (class_exists($route['controller'])) {
             $controller_reflection = new \ReflectionClass($route['controller']);
