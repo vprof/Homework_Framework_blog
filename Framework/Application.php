@@ -38,26 +38,11 @@ class Application {
         $match_route = new Router($map);
         $route = $match_route->findRoute();
         $controller = new $route['controller'];
-
-        echo '<pre>';
-        print_r($route);
-        echo '</pre>';
-
-        echo '<hr>';
-
-        echo '<pre>';
-        print_r($controller);
-        echo '</pre>';
-
-        echo '<hr>';
-
+        
         if (class_exists($route['controller'])) {
             $controller_reflection = new \ReflectionClass($route['controller']);
-            if ($controller_reflection->hasMethod($route['action'])) {
-                //Запускаем конкретное действие
-                //устанавливая результат
+            if ($controller_reflection->getMethod($route['action'].'Action')) {
                 $controller = $controller_reflection->newInstance();
-
 
             } else {
                 new FrameworkException();
