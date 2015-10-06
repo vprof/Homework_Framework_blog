@@ -9,13 +9,30 @@ namespace Framework\Router;
  * @author Jura Zubach
  * @since 1.0
  */
-class Router {
+class Router 
+{
 
-    protected $map = array();
+    protected $routing_map = array();
+    protected $request;
 
-    public function __construct($routing_map = array())
+    function __construct($map = array()){
+        $this->routing_map = $map;
+        $this->request = new Request();
+        
+    public function findRoute()
     {
-        $this->map = $routing_map;
+        $uri = $this->request->getUri();
+        foreach($this->routing_map as $route)
+        {
+            if($route['pattern'] == $uri)
+            {
+                $match_routes = $route;
+            }
+        }
+        if(empty($match_routes))
+        {
+            new RouteException();
+        }
+        return $match_routes;
     }
-
 }
