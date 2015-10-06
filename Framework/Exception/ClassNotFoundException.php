@@ -11,5 +11,8 @@ namespace Framework\Exception;
  */
 class ClassNotFoundException extends FrameworkException
 {
-      //...
+    public function __construct()
+    {
+        echo "Ошибка ClassNotFound";
+    }
 }
