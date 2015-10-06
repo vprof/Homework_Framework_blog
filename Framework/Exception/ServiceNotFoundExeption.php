@@ -11,5 +11,8 @@ namespace Framework\Exception;
  */
 class ServiceNotFoundExeption extends FrameworkException
 {
-
+    public function __construct()
+    {
+        echo "Ошибка ServiceNotFound";
+    }
 }
